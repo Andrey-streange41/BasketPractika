@@ -26,12 +26,6 @@ backToOrders.addEventListener('click',CloseModalWindow);
 
 const showCase = 
 [
-    new Product('00123','МАГРОК Ретро с молоком вар.', '(п/а-Ф80) (2 кг)', true, 115, 12, "Украина",'images/magrok-with-milk.webp'),
-    new Product('00234','МАГРОК Любительская к-са в/с синюга', '(Газ 1,5)', true, 205, 105, "Украина", 'images/magrok-lubitelskaya.jpeg'),
-    new Product('00345','МАГРОК Филейные сосиски 1с п/а', '(газ - 12 шт) (0,6кг)', true, 145 , 22, "Украина", 'images/file-magrok.webp'),
-    new Product('00456','МАГРОК Филейная вар. в/с 2 кг (п/а-Ф80)', 'в/с 2 кг (п/а-Ф80) ', true, 130 , 200, "Украина", 'images/file-var-magr.jpeg'),
-    new Product('00567','ДМ Снеки в/к сушеные Классик .', '(280гр "Чикенzzz")', true, 76.1 , 120, "Украина", 'images/sneak.webp'),
-    new Product('00678','Casademont колбаса Caprichos', 'Fuet с перцем 80г', true, 82 , 15, "Украина", 'images/colbaska.webp'),
 ];
 let basket = [];
 //Всегда можно розширить асортимент на странице
@@ -42,9 +36,6 @@ addProductInCatalog(new Product(createId(),'МАГРОК Филейная вар
 addProductInCatalog(new Product(createId(),'ДМ Снеки в/к сушеные Классик','(280гр "Чикенzzz")',true,300.22,123.2,"Украина",'images/sneak.webp',1.4));
 addProductInCatalog(new Product(createId(),'МАГРОК Столичная в/с вар.','(пузырь)ТУ 1/2',true,217.11,41.9,"Украина",'images/stolichna.jpeg',1.6));
 addProductInCatalog(new Product(createId(),'Casademont колбаса Caprichos.','Fuet с перцем 80г',true,82.22,141.9,"Украина",'images/colbaska.webp',1.6));
-
-
-
 
 
 function addProductInCatalog(product)
@@ -498,13 +489,6 @@ function returnColorBasket()
 }
 function removeFromBasket()
 {
-    for (let i = 0; i < basket.length; i++) {
-       
-        
-    }
     basket = basket.filter((item)=>{item != this.parentElement.parentElement.children[0].children[1].children[0].children[0].textContent});
-    console.dir(basket);
     this.parentElement.parentElement.remove();
-    
-   
 }
