@@ -203,6 +203,7 @@ function onBuyProductClick()
     deleteIcon.addEventListener('mousemove',changeColorBasket);
     deleteIcon.addEventListener('mouseleave',returnColorBasket);
     deleteIcon.addEventListener('click',removeFromBasket);
+    deleteIcon.style.cursor ='pointer';
 
     const titleAndDescr = document.createElement('div');
     titleAndDescr.classList.add('second-block-content-title-and-descr');
@@ -450,10 +451,14 @@ function getTotalResultAllOrder()
         const noItem = document.getElementById('no-item');
         noItem.style.display ='block';
         noItem.children[1].addEventListener('click',CloseModalWindow);
+        const secSection = document.getElementById('second-section-modal');
+        secSection.style.display = 'none';
     }
     else{
         const noItem = document.getElementById('no-item');
         noItem.style.display ='none';
+        const secSection = document.getElementById('second-section-modal');
+        secSection.style.display = 'flex';
     }
     const container = document.getElementById('contentContainer');
     if(container === null)

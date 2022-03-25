@@ -1,274 +1,374 @@
-.modal-container-wrapper
-{
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; 
-    overflow: auto;
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-    display: none;
-    z-index: 1;
+.modal-container-wrapper {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
+  display: none;
+  z-index: 1;
+}
+
+.basketModalWindow {
+  width: 40%;
+  border: black solid 2px;
+  position: relative;
+  margin-left: 30%;
+  background-color: whitesmoke;
+  border-radius: 25px;
+  overflow: hidden;
+  background-color: #8b8b8b;
+}
+
+.ageCategoriAlert {
+  color: whitesmoke;
+  display: flex;
+  font-size: 12px;
+  padding: 15px;
+  margin-left: 10px;
+}
+
+.ageCategoryMessage {
+  margin-left: 20px;
+  padding-left: 30px;
+  padding-right: 70px;
+  margin-right: 90px;
+  line-height: 20px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.poput-title {
+  background: #018f5f;
+  color: #fff;
+  -webkit-box-align: center;
+  align-items: center;
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin: 0;
+  -webkit-box-pack: start;
+
+  padding: 18px 25px;
+  font-family: sans-serif;
+  display: flex;
+}
+
+.poput-title::before {
+  content: url("../images/basket(1).png");
+  margin-right: 20px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.close {
+  position: absolute;
+  right: 25px;
+  padding: 5px;
+  cursor: pointer;
+  font-size: xx-large;
+  color: rgba(206, 206, 206, 0.664);
+}
+
+.noItem-in-basket {
+  background-color: white;
+  color: rgb(47, 47, 47);
+  margin-top: 0px;
+  padding-left: 10%;
+  padding-top: 5%;
+  font-family: ProximaNova, sans-serif;
+  display: none;
+}
+
+.noItem-in-basket > button {
+  margin-left: 23%;
+  margin-bottom: 4%;
+  background: #f9b10a;
+  color: #fff;
+  border-color: #f9b10a;
+  cursor: pointer;
+  line-height: 1.5;
+  font-family: inherit;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: none;
+  transition: 0.2s ease-in;
+  border-radius: 5px;
+  padding: 3px 25px;
+}
+
+.content-container-item {
+  background-color: white;
+  border: solid 2px white;
+  margin: 0px 0px;
+}
+.content-container {
+  background-color: red;
+}
+
+.content-container-item-wrapper {
+  box-sizing: border-box;
+  margin: 3%;
+  border: solid 2px rgba(233, 230, 217, 0.452);
+  background-color: white;
+  border-radius: 20px;
+  display: flex;
+}
+
+.second-block-content {
+  width: 75%;
+}
+
+.second-block-content-title-and-descr {
+  display: flex;
+  justify-content: start;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.2;
+  text-align: left;
+  font-family: sans-serif;
+  color: #454545;
+}
+
+.cost-descr-part {
+  display: flex;
+}
+
+.first-div-first-p {
+  margin-top: 0px;
+  font-size: 12px;
+  color: rgba(139, 138, 138, 0.65);
+}
+
+.second-div {
+  font-weight: bold;
+  margin-top: 4%;
+  padding-right: 3%;
+  padding-left: 3%;
+  font-size: x-large;
+  font-family: sans-serif;
+  color: #454545;
+}
+
+.third-div-first-p {
+  margin: 0px;
+  margin-bottom: 5%;
+  font-size: 12px;
+  color: rgba(139, 138, 138, 0.65);
+}
+
+.last-div-first-p {
+  margin-top: 0px;
+  font-size: 12px;
+  color: rgba(139, 138, 138, 0.65);
+}
+
+#closeModal:hover {
+  color: white;
+}
+
+.kgLable {
+  font-size: 12px;
+  color: rgba(139, 138, 138, 0.65);
+  font-weight: bold;
+}
+
+.equalLabel {
+  color: rgba(139, 138, 138, 0.65);
+  font-size: xx-large;
+  font-weight: bold;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.PriceLabel {
+  font-family: sans-serif;
+  font-weight: 600;
+}
+
+.multiplyLabel {
+  font-family: sans-serif;
+  font-weight: 600;
+  color: rgba(139, 138, 138, 0.65);
+  font-size: large;
+}
+
+.back-to-shoping {
+  font-size: 13px;
+  font-weight: 300;
+  text-decoration: underline;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+.grnSpan {
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.takeOrderButton {
+  height: 50px;
+  font-size: 18px;
+  padding: 3px 41px;
+  background: #d2262f;
+  color: #fff;
+  border-color: #d2262f;
+  transition: 0.2s ease-in;
+  border-radius: 5px;
+  font-weight: 400;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.basket-remove {
+  margin: 80px 40px;
+  width: 35px;
+  height: 35px;
 }
 
 
-
-.basketModalWindow
+.modal-foter
 {
-    width: 50%;
-    border: black solid 2px;
-    position: relative;
-    margin-left: 30%;
-    background-color: whitesmoke;
-    border-radius: 25px;
-    overflow: hidden;
-    background-color: #8b8b8b;
-}
-
-.ageCategoriAlert
-{
-    color: whitesmoke;
     display: flex;
-    font-size: 12px;
-    padding: 15px ;
-    margin-left:10px;
-   
-}
-
-.ageCategoryMessage
-{
-    margin-left: 20px;
-    padding-left: 30px;
-    padding-right: 70px;
-    margin-right:90px ;
-    line-height: 20px;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  
-}
-
-
-
-.poput-title
-
-{
-    background: #018f5f;
-    color: #fff;
+    align-items: center;
+    justify-content: space-around;
+    background: #f7f7f5;
     -webkit-box-align: center;
     align-items: center;
-    font-size: 25px;
-    font-weight: 600;
-    text-transform: uppercase;
-    margin: 0;
-    -webkit-box-pack: start;
+    padding: 16px 24px 30px;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+.modal-foter-text-info
+{
+    text-align: left;
+    -webkit-box-flex: 0;
+    flex: 0 0 50%;
+    max-width: 50%;
+    padding-right: 10px;
     
-    padding: 18px 25px;
-    font-family: sans-serif;
-    display: flex;
-    
+}
+.modal-foter{
+    background-color: rgb(245, 245, 243);
 }
 
-
-.poput-title::before
+.telphone:valid
 {
-    content: url('../images/basket(1).png');
-    margin-right: 20px;
-    display: inline-block;
-    vertical-align: middle;
+    background-color: #ddffdd;
 }
 
-.close
+.telphone:invalid
 {
-    position: absolute;
-    right: 25px;
-    padding: 5px;
-    cursor: pointer;
-    font-size: xx-large;
-    color: rgba(206, 206, 206, 0.664);
+    background-color: #ffdddd;
 }
 
-.noItem-in-basket
+.form-control::placeholder
 {
-    background-color: white;
-    color:rgb(47, 47, 47);
-    margin-top: 0px;
-    padding-left:10%;
-    padding-top: 5%;
-    font-family: ProximaNova,sans-serif;
-    display: none;
+    color: #666;
+    opacity: 1;
 }
 
-.noItem-in-basket>button
+.form-control
 {
-    margin-left:23%;
-    margin-bottom: 4%;
-    background: #f9b10a;
-    color: #fff;
-    border-color: #f9b10a;
-    cursor: pointer;
+    height: 50px;
+    border-color: #fff;
+    border-radius: 10px;
+    background: #fff;
+    color: #494949;
+    padding-left: 17px;
+    padding-right: 9px;
+    appearance: none;
+    font-size: .875rem;
+    position: relative;
+    z-index: 0;
+    padding: .375rem .75rem;
+    border: 1px solid #ced4da;
     line-height: 1.5;
-    font-family: inherit;
+}
+
+.controls
+{
+    position: relative;
+}
+
+.btn:not(:disabled):not(.disabled) {
+    cursor: pointer;
+  }
+
+  .btn
+  {
+    height: 50px;
+    min-width: unset;
+    width: 50px;
+    flex: 0 0 50px;
+    margin-left: -10px;
+    z-index: 1;
+    padding: 6px 12px;
+    position: relative;
     font-size: 16px;
     font-weight: 400;
     text-transform: none;
     transition: .2s ease-in;
     border-radius: 5px;
-    padding: 3px 25px;
-}
+    text-align: center;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    line-height: 1.5;
+    user-select: none;
+  }
 
-.content-container-item
-{
-   background-color: white;
-   border: solid 2px white;
-   margin: 0px 0px;
-}
-.content-container
-{
-    background-color: red;
-    
-}
-
-.content-container-item-wrapper
-{
-    box-sizing: border-box;
-    margin: 3%;
-    border: solid 2px rgba(233, 230, 217, 0.452);
-    background-color: white;
-    border-radius: 20px;
-    display: flex;
-}
-
-.second-block-content
-{
-    
-    width: 75%;
-}
-
-.second-block-content-title-and-descr
-{
-    display: flex;
-    justify-content: start;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.2;
-    text-align: left;
-    font-family: sans-serif;
-    color: #454545;
-}
-
-.cost-descr-part
-{
-    display: flex;
-    
-}
-
-.first-div-first-p
-{
-    margin-top:0px;
-    font-size: 12px;
-    color: rgba(139, 138, 138, 0.65);
-   
-}
-
-
-
-.second-div
-{
-   font-weight: bold;
-    margin-top: 4%;
-    padding-right: 3%;
-    padding-left: 3%;
-    font-size: x-large;
-    font-family: sans-serif;
-    color: #454545;
-}
-
-.third-div-first-p
-{
-    margin:0px;
-    margin-bottom: 5%;
-    font-size: 12px;
-    color: rgba(139, 138, 138, 0.65);
-}
-
-.last-div-first-p
-{
-    margin-top: 0px;
-    font-size: 12px;
-    color: rgba(139, 138, 138, 0.65);
-}
-
-
-#closeModal:hover
-{
-    color: white;
-}
-
-
-.kgLable
-{
-    font-size: 12px;
-    color: rgba(139, 138, 138, 0.65);
-    font-weight: bold;
-}
-
-
-.equalLabel
-{
-    color: rgba(139, 138, 138, 0.65);
-    font-size: xx-large;
-    font-weight: bold;
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-}
-
-.PriceLabel
-{
-    font-family: sans-serif;
-    font-weight: 600;
-}
-
-.multiplyLabel
-{
-    font-family: sans-serif;
-    font-weight: 600;
-    color: rgba(139, 138, 138, 0.65);
-    font-size: large;
-}
-
-.back-to-shoping
-{
-    font-size: 13px;
-    font-weight: 300;
-    text-decoration: underline;
-    font-family: sans-serif;
-    cursor: pointer;
-}
-
-.grnSpan
-{
-    font-size: 16px;
-    font-weight: 400;
-}
-
-.takeOrderButton
-{
-    height: 50px;
-    font-size: 18px;
-    padding: 3px 41px;
-    background: #d2262f;
+  .btn-gray
+  {
+    background: #b3b3b3;
     color: #fff;
-    border-color: #d2262f;
-    transition: .2s ease-in;
-border-radius: 5px;
-font-weight: 400;
-text-transform: none;
-}
+    border-color: #b3b3b3;
+  }
+
+  .ic-cellphone::before
+  {
+    content: url("../images/phone.png");
+  }
+
+  .ic::before
+  {
+    font-family: sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    display: inline-block;
+    text-decoration: inherit;
+    text-align: center;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1em;
+  }
+
+  .title-content
+  {
+    font-size: 20px;
+    font-weight: 600;
+    color: #d2262f;
+    text-transform: uppercase;
+    font-family:  sans-serif;
+  }
 
 
-.basket-remove
-{
-    margin: 80px 40px;
-    width: 35px;
-    height: 35px;
-}
+  .foter-text-content
+  {
+    line-height: 1.143;
+    font-size: 14px;
+    color: #242021;
+    font-family:  sans-serif;
+    padding-right: 100px
+  }
+
+  .second-section-modal
+  {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      background-color: white;
+  }
