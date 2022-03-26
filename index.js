@@ -23,23 +23,25 @@ modal.addEventListener('click',getTotalResultAllOrder);
 const backToOrders = document.getElementById('back-to-orders-id');
 backToOrders.addEventListener('click',CloseModalWindow); 
 
+const select = document.getElementById('sort');
+select.addEventListener('change',sortShowCase);
 
 const showCase = 
 [
 ];
 let basket = [];
 //Всегда можно розширить асортимент на странице
-addProductInCatalog(new Product(createId(),'МАГРОК Ретро с молоком вар.','(п/а-Ф80) (2 кг)',true,115.23,54.3,"Украина",'images/magrok-with-milk.webp',1.2));
-addProductInCatalog(new Product(createId(),'МАГРОК Любительская к-са в/с синюга','(Газ 1,5)',true,205.44,34.5,"Украина",'images/magrok-lubitelskaya.jpeg',1.8));
-addProductInCatalog(new Product(createId(),'МАГРОК Филейные сосиски 1с п/а.','(газ - 12 шт) (0,6кг)',true,145.77,44.3,"Украина",'images/file-magrok.webp',2.0));
-addProductInCatalog(new Product(createId(),'МАГРОК Филейная вар. в/с 2 кг (п/а-Ф80)','в/с 2 кг (п/а-Ф80)',true,130.12,244.1,"Украина",'images/file-var-magr.jpeg',1.3));
-addProductInCatalog(new Product(createId(),'ДМ Снеки в/к сушеные Классик','(280гр "Чикенzzz")',true,300.22,123.2,"Украина",'images/sneak.webp',1.4));
-addProductInCatalog(new Product(createId(),'МАГРОК Столичная в/с вар.','(пузырь)ТУ 1/2',true,217.11,41.9,"Украина",'images/stolichna.jpeg',1.6));
-addProductInCatalog(new Product(createId(),'Casademont колбаса Caprichos.','Fuet с перцем 80г',true,82.22,141.9,"Украина",'images/colbaska.webp',1.6));
+addProductInCatalog(new Product(createId(),'МАГРОК Ретро с молоком вар.','(п/а-Ф80) (2 кг)',true,115.23,54.3,"Украина",'images/magrok-with-milk.webp',1.2),true);
+addProductInCatalog(new Product(createId(),'МАГРОК Любительская к-са в/с синюга','(Газ 1,5)',true,205.44,34.5,"Украина",'images/magrok-lubitelskaya.jpeg',1.8),true);
+addProductInCatalog(new Product(createId(),'МАГРОК Филейные сосиски 1с п/а.','(газ - 12 шт) (0,6кг)',true,145.77,44.3,"Украина",'images/file-magrok.webp',2.0),true);
+addProductInCatalog(new Product(createId(),'МАГРОК Филейная вар. в/с 2 кг (п/а-Ф80)','в/с 2 кг (п/а-Ф80)',true,130.12,244.1,"Украина",'images/file-var-magr.jpeg',1.3),true);
+addProductInCatalog(new Product(createId(),'ДМ Снеки в/к сушеные Классик','(280гр "Чикенzzz")',true,300.22,123.2,"Украина",'images/sneak.webp',1.4),true);
+addProductInCatalog(new Product(createId(),'МАГРОК Столичная в/с вар.','(пузырь)ТУ 1/2',true,217.11,41.9,"Украина",'images/stolichna.jpeg',1.6),true);
+addProductInCatalog(new Product(createId(),'Casademont колбаса Caprichos.','Fuet с перцем 80г',true,82.22,141.9,"Украина",'images/colbaska.webp',1.6),true);
 
-console.dir(showCase);
 
-function addProductInCatalog(product)
+
+function addProductInCatalog(product,flag)
 {
     const flexProductItem = document.createElement('section');
     flexProductItem.className = "flex-product-item";
@@ -141,7 +143,8 @@ function addProductInCatalog(product)
     div2.append(buttonWrapper2Div);
     buttonWrapper2Div.append(buyButton);
 
-    showCase.push(product);
+    if(flag)
+        showCase.push(product);
 
     const container = document.getElementById('containerProducts');
     container.append(flexProductItem);
@@ -496,4 +499,35 @@ function removeFromBasket()
 {
     basket = basket.filter((item)=>{item != this.parentElement.parentElement.children[0].children[1].children[0].children[0].textContent});
     this.parentElement.parentElement.remove();
+}
+function sortShowCase() {
+    debugger
+   if(this.value === 'price-ask')
+   {
+       showCase.sort((a,b) => a.Price > b.Price);
+       afterSortMyCatalog();
+   }
+   else if(this.value === 'price-desc')
+   {
+        showCase.sort((a,b) => a.Price < b.Price);
+        afterSortMyCatalog();
+   }
+   else if(this.value === 'is-top-desc')
+   {
+        showCase.sort((a,b) => a.AmountKg < b.AmountKg);
+        afterSortMyCatalog();
+   }
+   else if(this.value === 'is-top-desc')
+   {
+        
+   }
+}
+
+function afterSortMyCatalog() {
+        const len = showCase.length;
+        let container = document.getElementById('containerProducts');
+        container.innerHTML='';
+        for (let i = 0; i < len; i++) {
+        addProductInCatalog(showCase[i],false);
+        }
 }

@@ -13,94 +13,109 @@
   <body>
     
     <section id="mainContainer" class="container">
-      <h2 class="h2-title-prod">КОЛБАСНЫЕ ИЗДЕЛИЯ И КОПЧЕНОСТИ</h2>
-      <section class="d-flex justify-content-start">
-          <div class="modal-container-wrapper" id="wrapper-modal">
-          <div id="modalWindowBasketId" class="basketModalWindow">
-            <div class="ageCategoriAlert">
-              <div>
-                <img src="images/alertAgeC.png" alt="alertAgeImg" />
-              </div>
-              <p class="ageCategoryMessage">
-                Для лиц младше 18 лет мы не продаем алкогольные напитки или
-                табачные изделия. Если покупка содержит такой предмет и
-                приобретается несовершеннолетним, курьер снимает товар с покупки.
-              </p>
-            </div>
 
-            <div class="poput-title">
-              <span class="text">моя корзина</span>
-              <div class="close">
-                <span id="closeModal">x</span>
+      <div class="page-title-wrapper">
+        <h2 class="h2-title-prod">КОЛБАСНЫЕ ИЗДЕЛИЯ И КОПЧЕНОСТИ</h2>
+        <div class="sort-wrapper">
+            <select name="sort" id="sort" class="my-select-box">
+              <option value="default">По умолчанию</option>
+              <option value="price-ask">От дешевых к дорогим</option>
+              <option value="price-desc">От дорогих к дешевым</option>
+              <option value="is-top-desc">По популярности</option>
+              <option value="is-new-desc">Новинки(Отсутсвует)</option>
+              <option value="is-sale-desc">Скидки(Отсутсвует)</option>
+            </select>
+        </div>
+      </div>
+        <section class="d-flex justify-content-start">
+            <div class="modal-container-wrapper" id="wrapper-modal">
+            <div id="modalWindowBasketId" class="basketModalWindow">
+              <div class="ageCategoriAlert">
+                <div>
+                  <img src="images/alertAgeC.png" alt="alertAgeImg" />
+                </div>
+                <p class="ageCategoryMessage">
+                  Для лиц младше 18 лет мы не продаем алкогольные напитки или
+                  табачные изделия. Если покупка содержит такой предмет и
+                  приобретается несовершеннолетним, курьер снимает товар с покупки.
+                </p>
               </div>
-            </div>
-            <div class="content-container" id="contentContainer">
-              <div id="no-item" class="noItem-in-basket">
-                <p>В корзине нет товаров</p>
-                <button>Продолжить покупки</button>
+
+              <div class="poput-title">
+                <span class="text">моя корзина</span>
+                <div class="close">
+                  <span id="closeModal">x</span>
+                </div>
               </div>
-            </div>
-            <section class="second-section-modal" id="second-section-modal" >
-              
+              <div class="content-container" id="contentContainer">
+                <div id="no-item" class="noItem-in-basket">
+                  <p>В корзине нет товаров</p>
+                  <button>Продолжить покупки</button>
+                </div>
+              </div>
+              <section class="second-section-modal" id="second-section-modal" >
+                
+                
               
             
-          
-              <div>
-                <p id="back-to-orders-id" class="back-to-shoping">
-                  < Вернутся к покупкам
-                </p>
-              </div>
-              <div>
-                <p style="font-weight: 800; font-family: sans-serif">Итого:</p>
-                <p
-                  id="resultOrder"
-                  style="
-                    color: rgba(177, 22, 22, 0.993);
-                    font-family: sans-serif;
-                    font-weight: bolder;
-                    font-size: xx-large;
-                  "
-                >
-                  <span class="grnSpan">грн</span>
-                </p>
-              </div>
-              <div>
-                <button class="takeOrderButton">Оформить заказ</button>
-              </div>
-            </section>
-            <section class="modal-foter">
-              <article class="modal-foter-text-info">
-                <h2 class="title-content">Купить без оформления</h2>
-                <p class="foter-text-content">
-                  Оставьте номер телефона. Наш менеджер свяжется с Вами для
-                  уточнения заказа в ближайшее время
-                </p>
-              </article>
-              <section class="d-flex align-items-start">
-                <div class="controls">
-                  <input
-                    value=""
-                    im-insert="true"
-                    class="form-control cellphone"
-                    type="tel"
-                    maxlength="10"
-                    pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
-                    autocomplete="off"
-                    placeholder="+38 (___) ___ __ __"
-                  />
+                <div>
+                  <p id="back-to-orders-id" class="back-to-shoping">
+                    < Вернутся к покупкам
+                  </p>
                 </div>
-                <button
-                  class="btn btn-gray btn-submit"
-                  title="Заказать без оформления"
-                >
-                  <i class="ic ic-cellphone"> </i>
-                </button>
+                <div>
+                  <p style="font-weight: 800; font-family: sans-serif">Итого:</p>
+                  <p
+                    id="resultOrder"
+                    style="
+                      color: rgba(177, 22, 22, 0.993);
+                      font-family: sans-serif;
+                      font-weight: bolder;
+                      font-size: xx-large;
+                    "
+                  >
+                    <span class="grnSpan">грн</span>
+                  </p>
+                </div>
+                <div>
+                  <button class="takeOrderButton">Оформить заказ</button>
+                </div>
               </section>
-            </section>
+              <section class="modal-foter">
+                <article class="modal-foter-text-info">
+                  <h2 class="title-content">Купить без оформления</h2>
+                  <p class="foter-text-content">
+                    Оставьте номер телефона. Наш менеджер свяжется с Вами для
+                    уточнения заказа в ближайшее время
+                  </p>
+                </article>
+                <section class="d-flex align-items-start">
+                  <div class="controls">
+                    <input
+                      value=""
+                      im-insert="true"
+                      class="form-control cellphone"
+                      type="tel"
+                      maxlength="10"
+                      pattern="^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$"
+                      autocomplete="off"
+                      placeholder="+38 (___) ___ __ __"
+                    />
+                  </div>
+                  <button
+                    class="btn btn-gray btn-submit"
+                    title="Заказать без оформления"
+                  >
+                    <i class="ic ic-cellphone"> </i>
+                  </button>
+                </section>
+              </section>
+            </div>
           </div>
-        </div>
-        <div class="flex-container-row-1" id="containerProducts"></div>
-      </section>
+          <div class="flex-container-row-1" id="containerProducts"></div>
+        </section>
+      
+      
       
 
     </section>
