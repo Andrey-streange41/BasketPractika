@@ -1,9 +1,11 @@
 *{
     box-sizing: border-box;
+    font-family: sans-serif;
 }
-h1
+.h2-title-prod
 {
-    text-align: center;
+    margin-left:4%;
+    font-size: xx-large;
 }
 
 .productImages

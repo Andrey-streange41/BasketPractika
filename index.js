@@ -37,6 +37,7 @@ addProductInCatalog(new Product(createId(),'ДМ Снеки в/к сушеные
 addProductInCatalog(new Product(createId(),'МАГРОК Столичная в/с вар.','(пузырь)ТУ 1/2',true,217.11,41.9,"Украина",'images/stolichna.jpeg',1.6));
 addProductInCatalog(new Product(createId(),'Casademont колбаса Caprichos.','Fuet с перцем 80г',true,82.22,141.9,"Украина",'images/colbaska.webp',1.6));
 
+console.dir(showCase);
 
 function addProductInCatalog(product)
 {
@@ -330,7 +331,6 @@ function onBuyProductClick()
    basket.push(new Product(id,titleProduct,descrProduct,isPresent,price,amountKgProd,country,imgProduct,coefficient));
    
 }
-
 
 function getOnlyDigit(target)
 {
